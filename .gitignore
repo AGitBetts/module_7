@@ -1,0 +1,97 @@
+# =====================================================================
+# Project-specific ignores
+# =====================================================================
+
+# Raw and processed data files — regenerable via 01_download_gmpp_data.py
+# and 02_build_panel.py. Not committed because they're large and derivable.
+data/raw/
+data/panel.csv
+data/feature_dict.csv
+data/harmonisation.log
+
+# Model outputs — regenerable. Commit selectively if a specific output
+# is referenced by the published report and needs to be preserved at
+# a particular state.
+outputs/*.csv
+outputs/*.png
+outputs/*.txt
+
+# But DO commit a .gitkeep so the empty directories exist after clone
+!outputs/.gitkeep
+!data/.gitkeep
+
+# =====================================================================
+# Python
+# =====================================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.installed.cfg
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Type-checking caches
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# =====================================================================
+# IDE and editor
+# =====================================================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =====================================================================
+# OS
+# =====================================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# =====================================================================
+# Secrets — never commit
+# =====================================================================
+
+.env
+.env.local
+*.pem
+*.key
+secrets.yml
+config.local.*
